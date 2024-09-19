@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5001:5000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8050:8050"
+    depends_on:
+      - backend
